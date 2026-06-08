@@ -91,6 +91,8 @@ Node* startNodeDetect(Node* &head){
         return NULL;
     }
     Node* intersection = Floyd_Detect_Loop(head);
+    if(intersection == NULL)
+        return NULL;
     Node* slow = head;
 
     while(slow != intersection){
