@@ -25,7 +25,7 @@ int getCelebrity(vector<vector<int>> &nums){
 
     int celeb = s.top();
     for(int i=0;i<n;i++){
-        if((i != celeb) && nums[i][celeb] == 0 || nums[celeb][i] == 1){
+        if((i != celeb) && (nums[i][celeb] == 0 || nums[celeb][i] == 1)){
             return -1;
         }
     }
