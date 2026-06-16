@@ -75,7 +75,7 @@ class Queue{
 
 int main(){
     Queue q;
-
+    // queue<int> q; // using stl implementation
     q.push(1);
     q.push(2);
     q.push(3); // 1, 2, 3
@@ -86,5 +86,12 @@ int main(){
     }
     cout<<endl;
     return 0;
-
 }
+
+// difference between dequeue and deque
+// dequeue is a pop operation in the queue
+// deque is a double ended queue (new queue) where 
+    // push operation can be done in both front and rear end 
+    // pop operation can be done in both front and rear end
+    // there is two operation front() and back() operation
+    
