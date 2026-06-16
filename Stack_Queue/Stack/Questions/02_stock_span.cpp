@@ -2,7 +2,7 @@
 // prevhigh - immedeatre greater value
 #include<bits/stdc++.h>
 using namespace std;
-// TC O(n) SCO(N)
+// TC O(n) SC O(N)
 vector<int> stockSpan(vector<int> &price){
     vector<int> ans(price.size(),0);
     stack<int> s;
@@ -32,3 +32,30 @@ int main(){
     }
 
 }
+
+// leetcode solution
+// class StockSpanner {
+//     stack<pair<int,int>> s; // stores {currentPrice, span}
+// public:
+//     StockSpanner() {
+        
+//     }
+    
+//     int next(int price) {
+       
+//         int span = 1;
+
+//         while(!s.empty() && s.top().first <= price){
+//             span += s.top().second;
+//             s.pop();
+//         }
+//         s.push({price, span});
+//         return span;
+//     }
+// };
+
+/**
+ * Your StockSpanner object will be instantiated and called as such:
+ * StockSpanner* obj = new StockSpanner();
+ * int param_1 = obj->next(price);
+ */
