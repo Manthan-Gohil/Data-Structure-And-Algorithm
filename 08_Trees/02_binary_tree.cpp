@@ -121,7 +121,63 @@ void levelOrder2(Node* root){
             }
         }
     }
-    cout<<endl;
+}
+
+void reverseLevelOrder(Node* root){
+    queue<Node*> q;
+    stack<int> s;
+    if(root == NULL) return;
+    q.push(root);
+
+    while(!q.empty()){
+        Node* temp = q.front();
+        q.pop();
+        s.push(temp->data);
+
+        //push right then left
+        if(temp->right != NULL){
+            q.push(temp->right);
+        }
+        if(temp->left != NULL){
+            q.push(temp->left);
+        }
+    }
+    while(!s.empty()){
+        cout<<s.top()<<" ";
+        s.pop();
+    }
+}
+
+void buildFromLevelOrder(Node* root){
+    queue<Node*> q;
+    int data;
+    cout<<"Enter root node data : "<<endl;
+    cin>>data;
+    root = new Node(data);
+    q.push(root);
+
+    while(!q.empty()){
+        Node* temp = q.front();
+        q.pop();
+
+        cout<<"Enter the left node data for "<<temp->data<<endl;
+        int leftData;
+        cin>>leftData;
+
+        if(leftData != -1){
+            temp->left = new Node(leftData);
+            q.push(temp->left);
+        }
+
+        cout<<"Enter the right node data for "<<temp->right<<endl;
+        int rightData;
+        cin>>rightData;
+
+        if(rightData != -1){
+            temp->right = new Node(rightData);
+            q.push(temp->right);
+        }
+    }
 }
 
 int main(){
@@ -143,5 +199,11 @@ int main(){
     // levelOrder(root);
     cout<<"levelorder traversal 2 : "<<endl;
     levelOrder2(root);
+    cout<<endl;
+    cout<<"Reverse Level Order Traversal : "<<endl;
+    reverseLevelOrder(root);
+
+    cout<<"Build Binary Tree from level order method : "<<endl;
+    buildFromLevelOrder(root);
     return 0;
 }
