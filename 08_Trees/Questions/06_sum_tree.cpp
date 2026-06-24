@@ -1,6 +1,6 @@
 // summ tree ->
 // given a binary tree return true if for every node X in the tree other than the leaves, its value is equal to its left subtree value and its right subtree value. else return false
-
+// The value of a node must be exactly equal to the total sum of all the nodes in its left subtree plus all the nodes in its right subtree.
 #include<bits/stdc++.h>
 using namespace std;
 
