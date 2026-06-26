@@ -1,9 +1,4 @@
-// binary search tree ->
-// left sub tree node values are less than root node value
-// right sub tree node values are greater than root node value
-
-
-// inorder of BST is sorted
+// search x value in BST
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -76,52 +71,25 @@ void levelOrderTraversal(Node* root){
     }
 }
 
-// preorder traversal TC(O(N))
-void preOrder(Node* root){
-    if(root == NULL) return;
+// TC O(n)
+bool searchBST(Node* root, int d){
+    if(root == NULL) return false;
 
-    cout<<root->data<<" ";
-    preOrder(root->left);
-    preOrder(root->right);
-}
-
-// inorder traversal TC(O(N))
-void inOrder(Node* root){
-    if(root == NULL) return;
-
-    inOrder(root->left);
-    cout<<root->data<<" ";
-    inOrder(root->right);
-}
-
-// postorder traversal TC(O(N))
-void postOrder(Node* root){
-    if(root == NULL) return;
-
-    postOrder(root->left);
-    postOrder(root->right);
-    cout<<root->data<<" ";
+    if(root->data == d) return true;
+    if(d < root->data){
+        return searchBST(root->left, d);
+    }
+    else{
+        return searchBST(root->right,d);
+    }
 }
 
 int main(){
     Node* root = NULL;
 
-    cout<<"Enter data to create BST : "<<endl;
+    cout<<"Inserting BST : "<<endl;
     take_input(root);
-    // 10,8,21,7,27,5,4,3,-1
 
-    cout<<"Printing the BST : "<<endl;
+    cout<<"level order traversal : "<<endl;
     levelOrderTraversal(root);
-
-    cout<<"Pre order : "<<endl;
-    preOrder(root);
-    cout<<endl;
-    
-    cout<<"In order : "<<endl;
-    inOrder(root);
-    cout<<endl;
-    
-    cout<<"Post order : "<<endl;
-    postOrder(root);
-    return 0;
 }
