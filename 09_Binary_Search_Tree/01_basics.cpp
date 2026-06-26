@@ -103,6 +103,20 @@ void postOrder(Node* root){
     cout<<root->data<<" ";
 }
 
+Node* minValue(Node* root){
+    Node* temp = root;
+    while(temp->left != NULL){
+        temp = temp->left;
+    }
+    return temp;
+}
+Node* maxValue(Node* root){
+    Node* temp = root;
+    while(temp->right != NULL){
+        temp = temp->right;
+    }
+    return temp;
+}
 int main(){
     Node* root = NULL;
 
@@ -123,5 +137,11 @@ int main(){
     
     cout<<"Post order : "<<endl;
     postOrder(root);
+    cout<<endl;
+    
+    
+    cout<<"min value of BST : "<<minValue(root)->data<<endl;
+    cout<<"max value of BST : "<<maxValue(root)->data<<endl;
     return 0;
+
 }
