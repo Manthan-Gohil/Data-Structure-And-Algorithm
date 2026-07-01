@@ -42,3 +42,13 @@
 // for 0 based indexing
 // left -> 2*i+1
 // right -> 2*i+2
+
+// heap sort TC : O(nlogn)
+// if there is a heap given (either min heap or max heap) return this in sorted order
+// approach
+// 1. swap root element with last element and size--
+// 2. now move root element to its correct position (use heapify function)
+// 3. now repeat the step 1 and step 2 till size >= 1
+
+// in stl, priority_queue is data structure which by default is max heap
+// priority queue function-> push(), pop(), top(), empty(), size() 
