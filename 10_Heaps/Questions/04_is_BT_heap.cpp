@@ -36,6 +36,7 @@ bool isCBT(Node* root, int index, int cnt){
 }
 
 bool isMaxOrder(Node* root){
+    if(root == NULL) return true;
     // leaf node
     if(root->left == NULL && root->right == NULL){
         return true;
@@ -46,7 +47,7 @@ bool isMaxOrder(Node* root){
         bool left = isMaxOrder(root->left);
         bool right = isMaxOrder(root->right);
 
-        if(left && right && (root->data > root->left->data && root->data > root->left->data)){
+        if(left && right && (root->data > root->left->data && root->data > root->right->data)){
             return true;
         }else{
             return false;
