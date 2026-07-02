@@ -55,6 +55,7 @@ bool isMaxOrder(Node* root){
     }
 }
 
+// TC O(n)
 bool isHeap(Node* root){
     int index = 0;
     int totalCount = countNodes(root);
