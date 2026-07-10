@@ -42,7 +42,7 @@ int solveMem(vector<int> &nums, int x, vector<int> &dp){
 
     int mini = INT_MAX;
     for(int i=0;i<nums.size();i++){
-        int ans = solve(nums,x-nums[i]);
+        int ans = solveMem(nums,x-nums[i],dp);
         if(ans != INT_MAX){
             mini = min(mini, 1+ans);
         }
