@@ -59,3 +59,43 @@
 
 // Time: O(n × W)
 // Space: O(n × W) (can often be optimized to O(W))
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    vector<int> wt = {1, 3, 4, 5};
+    vector<int> val = {1, 4, 5, 7};
+
+    int n = wt.size();
+    int W = 7;
+
+    vector<vector<int>> dp(n + 1, vector<int>(W + 1, 0));
+
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= W; j++)
+        {
+            // current item's weight and value
+            int weight = wt[i - 1];
+            int value = val[i - 1];
+
+            // cannot take current item
+            if (weight > j)
+            {
+                dp[i][j] = dp[i - 1][j];
+            }
+            else
+            {
+                dp[i][j] = max(
+                    dp[i - 1][j],
+                    value + dp[i - 1][j - weight]
+                );
+            }
+        }
+    }
+
+    cout << dp[n][W];
+}
