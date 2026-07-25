@@ -43,5 +43,4 @@ int main(){
     int n = 124;
     cout<<"max product of two digits = "<<maxProduct(n)<<endl;
     cout<<"max product of two digits (method 2) = "<<maxProduct2(n)<<endl;
-
 }
