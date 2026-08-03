@@ -114,3 +114,5 @@ int main(){
     cout<<*ptr5<<endl; // 20
     return 0;
 }
+
+
