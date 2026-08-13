@@ -41,7 +41,7 @@ void explainVectors(){
     vector<int> ::iterator it = v.begin();
     it++;
     cout<<*(it)<<endl; // gives second element because of it++ // 2 ans
-
+    
     it = it+2;
     cout<<*(it)<<endl; // 4 ans
 

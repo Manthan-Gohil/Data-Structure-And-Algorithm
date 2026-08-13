@@ -12,7 +12,7 @@
 // parametrized constructor
 // copy constructor
 
-// if multiple constructors are in same class then it is called constructor overloading (example of polymorphism)
+// if multiple constructors of same name and its type different are in same class then it is called constructor overloading (example of polymorphism)
 
 
 #include<bits/stdc++.h>
