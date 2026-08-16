@@ -10,7 +10,7 @@ class A{
         int b;
 
         public:
-        void input(){
+        void input(){ // member function of class B
             cout<<"Enter the a and b "<<endl;
             cin>>a>>b;
         }
@@ -21,10 +21,11 @@ class A{
 };
 
 int main(){
-    A :: B obj;
-    obj.input();
-    obj.print();
+    // A :: B obj; // this is the object for class B using scope resolution operator.
+    // obj.input();
+    // obj.print();
 
-    
-
+    // B obj; (this is incorrect)
+    // obj.input();
+    // obj.print();
 }

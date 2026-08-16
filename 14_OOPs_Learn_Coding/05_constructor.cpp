@@ -1,4 +1,4 @@
-// constructor -> constructor is a special member function of class which is used to create or initialize the object
+// constructor -> constructor is a special member function of class which is used to create or initialize the object.
 
 // feature of constructor ->
 // 1. a constructor can only have one access modifier, which is public.

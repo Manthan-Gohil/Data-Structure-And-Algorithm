@@ -1,3 +1,17 @@
+// OOPs -> object oriented programming is the programming approach that are based on the classes and objects, which can contain data and code that manipulate that data.
+// multiple objects can be created from one class
+
+
+// class -> class is a user-defined datatype or blueprint that wrap the data and functions into a single entity (data members + member functions). classes do not have occupy memory, only objects occupy memory  
+
+// objects -> object is the instance of a class that shows the real world entity.
+
+// four pillers of OOPs
+// 1. Encapsulation
+// 2. Abstraction
+// 3. Polymorphism
+// 4. Inheritance
+
 #include<bits/stdc++.h>
 using namespace std;
 
