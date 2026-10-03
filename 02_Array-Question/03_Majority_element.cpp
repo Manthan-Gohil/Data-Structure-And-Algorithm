@@ -16,9 +16,30 @@ int majorityElement(vector<int> &nums){
     
 }
 
+int majorityElement2(vector<int> &nums){
+    int count = 0;
+    int candidate = 0;
+
+    for(int num : nums){
+        if(count == 0){
+            candidate = num;
+            count = 1;
+        }
+        else if(candidate == num){
+            count++;
+        }
+        else{
+            count--;
+        }
+    }
+    return candidate;
+}
+
 int main(){
     vector<int> nums = {2,2,1,1,1,2,2};
 
     int result = majorityElement(nums);
-    cout<<result<<" ";
+    int result2 = majorityElement2(nums);
+    cout<<result<<" "<<endl;
+    cout<<result2<<" ";
 }
